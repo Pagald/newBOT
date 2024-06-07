@@ -18,7 +18,6 @@
 - [x] Admin Commands
 - [x] Broadcast
 - [x] Index
-- [x] IMDB search
 - [x] Inline Search
 - [x] Random pics
 - [x] ids and User info 
