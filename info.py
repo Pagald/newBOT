@@ -78,8 +78,8 @@ REQ_CHANNEL = int(environ.get('REQ_CHANNEL'))
 # Requested Content template variables ---
 ADMIN_USRNM = environ.get('ADMIN_USRNM','Husen751') # WITHOUT @
 MAIN_CHANNEL_USRNM = environ.get('MAIN_CHANNEL_USRNM','+eWqd-9EHRFRjM2M1') # WITHOUT @
-DEV_CHANNEL_USRNM = environ.get('DEV_CHANNEL_USRNM','LayDeveloperr') # WITHOUT @
-LAZY_YT_HANDLE = environ.get('LAZY_YT_HANDLE','')  # WITHOUT @ [  add only handle - don't add full url  ] 
+DEV_CHANNEL_USRNM = environ.get('DEV_CHANNEL_USRNM','') # WITHOUT @
+LAZY_YT_HANDLE = environ.get('','')  # WITHOUT @ [  add only handle - don't add full url  ] 
 MOVIE_GROUP_USERNAME = environ.get('MOVIE_GROUP_USERNAME', "+qAxoGBvSc34yNmU1") #[ without @ ]
 
 # Url Shortner
@@ -155,8 +155,8 @@ if SELF_DELETE == "True":
     SELF_DELETE = True
 
 # Download Tutorial Button #
-DOWNLOAD_TEXT_NAME = "📥 HOW TO DOWNLOAD 📥"
-DOWNLOAD_TEXT_URL = "https://t.me/LazyDeveloper"
+DOWNLOAD_TEXT_NAME = "
+DOWNLOAD_TEXT_URL = 
 
 # Custom Caption Under Button #
 CAPTION_BUTTON = "Get Updates"
