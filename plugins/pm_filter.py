@@ -189,7 +189,7 @@ async def doc(bot, update):
     except Exception as e:
         logger.error(f"error 2 : {e}")
 
-# Born to make history @LazyDeveloper !
+# Born to make history  !
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
@@ -709,7 +709,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     except Exception as e:
         logger.error(f"Got an unexpected error : {e}")
 
-# Born to make history @LazyDeveloper !
+# Born to make history  !
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
     data = query.data
@@ -728,7 +728,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     title = chat.title
                 except:
                     await query.message.edit_text("Make sure I'm present in your group!!", quote=True)
-                    return await query.answer('♥️ Love @LazyDeveloper ♥️')
+                    return await query.answer('♥️ Love  ♥️')
             else:
                 await query.message.edit_text(
                     "I'm not connected to any groups!\nCheck /connections or connect to any groups",
@@ -1195,9 +1195,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             btn = [[
                 InlineKeyboardButton(text=f"🔍 Search Here 🔎", url=f"https://telegram.me/{MOVIE_GROUP_USERNAME}")
             ],[
-                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"https://telegram.me/LazyDeveloperSupport")
+                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"")
             ],[
-                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋", url=f"https://youtube.com/@LazyDeveloperr")
+                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋", url=f"https://)
 
             ]]
             btn_lzdv = [
@@ -1223,9 +1223,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             btn = [[
                 InlineKeyboardButton(text=f"🔍 Search Here 🔎", url=f"https://telegram.me/{MOVIE_GROUP_USERNAME}")
             ],[
-                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"https://telegram.me/LazyDeveloperSupport")
+                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"")
             ],[
-                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋", url=f"https://youtube.com/@LazyDeveloperr")
+                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋", url=f"https:
             ]]
             btn_lzdv = [
                 [
@@ -1250,9 +1250,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             btn = [[
                 InlineKeyboardButton(text=f"🔍 Search Here 🔎", url=f"https://telegram.me/{MOVIE_GROUP_USERNAME}")
             ],[
-                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"https://telegram.me/LazyDeveloperSupport")
+                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"https://)
             ],[
-                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋", url=f"https://youtube.com/@LazyDeveloperr")
+                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋", url=f"
 
             ]]
             btn_lzdv = [
@@ -1278,9 +1278,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             btn = [[
                 InlineKeyboardButton(text=f"🔍 Search Here 🔎", url=f"https://telegram.me/{MOVIE_GROUP_USERNAME}")
             ],[
-                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"https://telegram.me/LazyDeveloperSupport")
+                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"https:)
             ],[
-                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋", url=f"https://youtube.com/@LazyDeveloperr")
+                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋",
             ]]
             btn_lzdv = [
                 [
@@ -1305,9 +1305,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             btn = [[
                 InlineKeyboardButton(text=f"🔍 Search Here 🔎", url=f"https://telegram.me/{MOVIE_GROUP_USERNAME}")
             ],[
-                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"https://telegram.me/LazyDeveloperSupport")
+                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"")
             ],[
-                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋", url=f"https://youtube.com/@LazyDeveloperr")
+                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋", url=f"")
 
             ]]
             btn_lzdv = [
@@ -1330,11 +1330,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         # Send message to user
         try:
             btn = [[
-                InlineKeyboardButton(text=f"🔍 Search Here 🔎", url=f"https://telegram.me/{MOVIE_GROUP_USERNAME}")
+                InlineKeyboardButton(text=f"🔍 Search Here 🔎", url=f"}")
             ],[
-                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"https://telegram.me/LazyDeveloperSupport")
+                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"")
             ],[
-                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋", url=f"https://youtube.com/@LazyDeveloperr")
+                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋", url=f"")
             ]]
             btn_lzdv = [
                 [
@@ -1357,11 +1357,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         # Send message to user
         try:
             btn = [[
-                InlineKeyboardButton(text=f"💛 Request More 💛", url=f"https://telegram.me/{MOVIE_GROUP_USERNAME}")
+                InlineKeyboardButton(text=f"💛 Request More 💛", url=f"}")
             ],[
-                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"https://telegram.me/LazyDeveloperSupport")
+                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"")
             ],[
-                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋", url=f"https://youtube.com/@LazyDeveloperr")
+                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋", url=f"")
 
             ]]
             btn_lzdv = [
