@@ -155,8 +155,9 @@ if SELF_DELETE == "True":
     SELF_DELETE = True
 
 # Download Tutorial Button #
-DOWNLOAD_TEXT_NAME = "
-DOWNLOAD_TEXT_URL = 
+DOWNLOAD_TEXT_NAME = ""
+DOWNLOAD_TEXT_URL = ""
+HOW_TO_DOWNLOAD_URL = "https://t.me/movi_wa"
 
 # Custom Caption Under Button #
 CAPTION_BUTTON = "Get Updates"

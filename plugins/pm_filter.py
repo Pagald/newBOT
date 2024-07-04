@@ -23,7 +23,7 @@ from info import *
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, ForceReply, Message
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
-from utils import get_size, is_subscribed, get_poster, search_gagala, temp, get_settings, save_group_settings
+from utils import get_size, is_subscribed, get_poster, search_gagala, temp, get_settings, save_group_settings, is_req_subscribed_lazy
 from database.users_chats_db import db
 from database.ia_filterdb import Media, get_file_details, get_search_results,get_search_results_badAss_LazyDeveloperr
 from database.lazy_utils import progress_for_pyrogram, convert, humanbytes
@@ -382,7 +382,7 @@ async def next_page(bot, query):
     )
     btn.insert(0,
         [ 
-	    InlineKeyboardButton(text="⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://t.me/movi_wa'),
+	    InlineKeyboardButton(text="⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url=f'https://t.me/{MOVIE_GROUP_USERNAME}'),
         ] 
     )
 
@@ -685,7 +685,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             ]
         )
         btn.insert(0, [
-	            InlineKeyboardButton(text="⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://telegram.me/real_MoviesAdda3/18'),
+	            InlineKeyboardButton(text="⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url=f'https://t.me/{MOVIE_GROUP_USERNAME}'),
         ])
 
         if offset != "":
@@ -932,7 +932,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f"{files.file_name}"
 
         try:
-            if AUTH_CHANNEL and not await is_subscribed(client, query):
+            if AUTH_CHANNEL and not await is_req_subscribed_lazy(client, query):
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                 return
             elif settings['botpm']:
@@ -958,7 +958,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except Exception as e:
             await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
     elif query.data.startswith("checksub"):
-        if AUTH_CHANNEL and not await is_subscribed(client, query):
+        if AUTH_CHANNEL and not await is_req_subscribed_lazy(client, query):
             await query.answer("Mere saamne jyada smart nhi banne ka sona 😒", show_alert=True)
             return
         ident, file_id = query.data.split("#")
@@ -1194,11 +1194,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         try:
             btn = [[
                 InlineKeyboardButton(text=f"🔍 Search Here 🔎", url=f"https://telegram.me/{MOVIE_GROUP_USERNAME}")
-            ],[
-                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"")
-            ],[
-                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋", url=f"https://)
-
             ]]
             btn_lzdv = [
                 [
@@ -1222,11 +1217,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         try:
             btn = [[
                 InlineKeyboardButton(text=f"🔍 Search Here 🔎", url=f"https://telegram.me/{MOVIE_GROUP_USERNAME}")
-            ],[
-                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"")
-            ],[
-                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋", url=f"https:
             ]]
+
             btn_lzdv = [
                 [
                 InlineKeyboardButton(text=f"🗑 Delete Log ❌", callback_data = "close_data")
@@ -1249,12 +1241,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         try:
             btn = [[
                 InlineKeyboardButton(text=f"🔍 Search Here 🔎", url=f"https://telegram.me/{MOVIE_GROUP_USERNAME}")
-            ],[
-                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"https://)
-            ],[
-                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋", url=f"
-
             ]]
+
             btn_lzdv = [
                 [
                 InlineKeyboardButton(text=f"🗑 Delete Log ❌", callback_data = "close_data")
@@ -1277,11 +1265,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         try:
             btn = [[
                 InlineKeyboardButton(text=f"🔍 Search Here 🔎", url=f"https://telegram.me/{MOVIE_GROUP_USERNAME}")
-            ],[
-                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"https:)
-            ],[
-                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋",
             ]]
+
             btn_lzdv = [
                 [
                 InlineKeyboardButton(text=f"🗑 Delete Log ❌", callback_data = "close_data")
@@ -1304,11 +1289,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         try:
             btn = [[
                 InlineKeyboardButton(text=f"🔍 Search Here 🔎", url=f"https://telegram.me/{MOVIE_GROUP_USERNAME}")
-            ],[
-                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"")
-            ],[
-                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋", url=f"")
-
             ]]
             btn_lzdv = [
                 [
@@ -1330,11 +1310,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         # Send message to user
         try:
             btn = [[
-                InlineKeyboardButton(text=f"🔍 Search Here 🔎", url=f"}")
-            ],[
-                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"")
-            ],[
-                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋", url=f"")
+                InlineKeyboardButton(text=f"🔍 Search Here 🔎", url=f"https://t.me/{MOVIE_GROUP_USERNAME}")
             ]]
             btn_lzdv = [
                 [
@@ -1357,12 +1333,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         # Send message to user
         try:
             btn = [[
-                InlineKeyboardButton(text=f"💛 Request More 💛", url=f"}")
-            ],[
-                InlineKeyboardButton(text=f"🐞 REPORT BUG 🐞", url=f"")
-            ],[
-                InlineKeyboardButton(text=f"⚡️ Learn Bot Making 🦋", url=f"")
-
+                InlineKeyboardButton(text=f"💛 Request More 💛", url=f"https://t.me/{MOVIE_GROUP_USERNAME}")
             ]]
             btn_lzdv = [
                         [InlineKeyboardButton(text=f"♻ ̶R̶e̶q̶u̶e̶s̶t̶ ̶R̶e̶c̶i̶e̶v̶e̶d ♻", callback_data=f"notify_user_req_rcvd:{user_id}:{movie}")],
@@ -1672,7 +1643,7 @@ async def auto_filter(client, msg, spoll=False):
                                                                                                                                         ]))
                 
                 l = await message.reply_text(text=f"△ 𝙷𝚎𝚢 𝚜𝚘𝚗𝚊 `{message.from_user.first_name}` 😎,\n\nʏᴏᴜʀ ʀᴇQᴜᴇꜱᴛ ʜᴀꜱ ʙᴇᴇɴ ꜱᴇɴᴛ ᴛᴏ ᴏᴜʀ **ᴀᴅᴍɪɴ'ꜱ ᴅᴀꜱʜʙᴏᴀʀᴅ** !\nᴘʟᴇᴀꜱᴇ ᴋᴇᴇᴘ ꜱᴏᴍᴇ ᴘᴀᴛɪᴇɴᴄᴇ !\nᴛʜᴇʏ ᴡɪʟʟ ᴜᴘʟᴏᴀᴅ ɪᴛ ᴀꜱ ꜱᴏᴏɴ ᴀꜱ ᴘᴏꜱꜱɪʙʟᴇ.\n\n➟ 📝𝘾𝙤𝙣𝙩𝙚𝙣𝙩 𝙣𝙖𝙢𝙚 : `{search}`\n➟ 👮𝙍𝙚𝙦𝙪𝙚𝙨𝙩𝙚𝙙 𝘽𝙮 : `{message.from_user.first_name}`\n\n༺ @{MAIN_CHANNEL_USRNM} ༻\n\n🦋・‥☆𝘼𝘿𝙈𝙞𝙉 𝙨𝙪𝙥𝙥𝙤𝙧𝙩☆‥・🦋\n╰┈➤・☆ @{ADMIN_USRNM}\n╰┈➤・☆ @{ADMIN_USRNM}",
-                                                                                                       reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("━ • │▌║  ᗩᗪᗪ ʍɛ 2 ᑌᖇ Ǥᖇᗝᑌᑭ  ║▌│ • ━", url=f'http://t.me/{temp.U_NAME}?startgroup=true')],[InlineKeyboardButton("✪ Dev Ch- ✪", url=f"https://t.me/{DEV_CHANNEL_USRNM}"), InlineKeyboardButton("✪ ＹＴ ✪", url=f"https://youtube.com/@{LAZY_YT_HANDLE}"), InlineKeyboardButton("✪ Main Ch- ✪", url=f"https://t.me/{MAIN_CHANNEL_USRNM}")],[InlineKeyboardButton("╚»♥️ Thank You ♥️«╝", callback_data="close_data")]]))
+                                                                                                       reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("━ • │▌║  ᗩᗪᗪ ʍɛ 2 ᑌᖇ Ǥᖇᗝᑌᑭ  ║▌│ • ━", url=f'http://t.me/{temp.U_NAME}?startgroup=true')],[InlineKeyboardButton("✪ Main Ch- ✪", url=f"https://t.me/{MAIN_CHANNEL_USRNM}")],[InlineKeyboardButton("╚»♥️ Thank You ♥️«╝", callback_data="close_data")]]))
                 await asyncio.sleep(12)
                 await l.delete()    
                 if settings["spell_check"]:
@@ -1842,7 +1813,7 @@ async def auto_filter(client, msg, spoll=False):
     )
     btn.insert(0,
         [ 
-	    InlineKeyboardButton(text="⚡ʜᴏᴡ to ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://telegram.me/real_MoviesAdda3/18'),
+	    InlineKeyboardButton(text="⚡ʜᴏᴡ to ᴅᴏᴡɴʟᴏᴀᴅ⚡", url=f'https://t.me/{MOVIE_GROUP_USERNAME}'),
         ] 
     )
 
