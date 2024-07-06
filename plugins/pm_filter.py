@@ -1950,7 +1950,7 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("Hey Sona! The requested content is currently unavailable in our database, have some patience 🙂 - our great admin will upload it as soon as possible \n\n               **or**\n\nDiscuss issue with admin here 👉  <a href='https://t.me/Husen751'>Discuss Here</a> ♥️ ")
+        k = await msg.reply("Hey, The requested content is currently unavailable in our database, have some patience 🙂 - our great admin will upload it as soon as possible")
         await asyncio.sleep(10)
         await k.delete()
         return
@@ -1962,9 +1962,8 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply("Hey sona, did you checked your spelling properly, here are some suggestions for you, please check if your requested content match anyone of these following suggestions...\n\n                 **or**\n\nDiscuss issue with admin here 👉 <a href='https://t.me/Husen751'>Discuss Here</a> ♥️ ",
+    await msg.reply("Hey, did you checked your spelling properly, here are some suggestions for you, please check if your requested content match anyone of these following suggestions..",
                     reply_markup=InlineKeyboardMarkup(btn))
-
 
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
